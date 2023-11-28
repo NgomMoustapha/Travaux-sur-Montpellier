@@ -102,4 +102,34 @@ def run():
                     category_orders={'type': df['type'].value_counts().index})
 
     # Afficher le graphique avec Streamlit
+    
     st.plotly_chart(fig)
+        st.markdown(
+        """
+        ### Durée des chantiers
+
+       Répartitions des chantiers en fonction de leur durée en jours
+
+
+        """
+    )
+    df['duree_jours'] = (df['fin_chanti'] - df['debut_chan']).dt.days
+    
+    # Définir les bins pour la catégorisation
+    bins = [-float('inf'), 30, 180, 365, float('inf')]  # inf correspond à l'infini
+    
+    # Définir les labels pour les catégories
+    labels = ['Inférieur à 1 mois', 'Entre 1 et 6 mois', 'Entre 6 et 12 mois', 'Supérieur à 12 mois']
+    
+    # Ajouter une nouvelle colonne 'duree_categorie' avec les catégories
+    df['duree_categorie'] = pd.cut(df['duree_jours'], bins=bins, labels=labels, right=False)
+    
+    # Créer un graphique interactif avec Plotly Express
+    fig = px.histogram(df, x='duree_categorie', title='Distribution de la durée en jours par catégorie',
+                       labels={'duree_categorie': 'Catégorie de durée', 'count': 'Nombre d\'occurrences'},
+                       category_orders={'duree_categorie': df['duree_categorie'].value_counts().index})
+    
+    # Afficher le graphique dans Streamlit
+    st.plotly_chart(fig)
+
+
