@@ -1,85 +1,120 @@
-h1,
-h2,
-h3,
-h4 {
-  color: #000000;
+:root {
+  --text-color-light: #000000;
+  --code-color-light: #7ba7d9;
+  --background-color-light: #ffffff;
+  --sidebar-background-light: #86a5d9;
+  --sidebar-text-color-light: #86a5d9;
+  --hr-color-light: black;
+
+  --text-color-dark: #ffffff;
+  --code-color-dark: #7ba7d9;
+  --background-color-dark: #121212;
+  --sidebar-background-dark: #86a5d9;
+  --sidebar-text-color-dark: black;
+  --hr-color-dark: white;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-color-light);
 }
 
 code {
-  color: #7ba7d9;
+  color: var(--code-color-light);
 }
 
-#MainMenu {
-  display: none;
-}
-
-div[data-testid="stDecoration"] {
-  display: none;
-}
-
-footer {
+#MainMenu,
+div[data-testid="stDecoration"],
+footer,
+button[title="View fullscreen"] {
   display: none;
 }
 
 /* Radio buttons */
-
 .st-cc {
-  color: black;
+  color: var(--text-color-light);
   font-weight: 500;
 }
 
 /* Sidebar */
-
 section[data-testid="stSidebar"] > div {
-  background-color: #86a5d9;
+  background-color: var(--sidebar-background-light);
   padding-top: 2rem;
   padding-left: 1.5rem;
 }
 
-section[data-testid="stSidebar"] button[title="View fullscreen"] {
-  display: none;
-}
-
+section[data-testid="stSidebar"] button[title="View fullscreen"],
 section[data-testid="stSidebar"] button[kind="icon"] {
   display: none;
 }
 
 section[data-testid="stSidebar"] .st-bk {
-  background-color: #86a5d9;
+  background-color: var(--sidebar-background-light);
 }
 
 section[data-testid="stSidebar"] .st-c0 {
-  background-color:black
+  background-color: var(--sidebar-text-color-light);
 }
 
 section[data-testid="stSidebar"] hr {
   margin-top: 30px;
-  border-color: black;
+  border-color: var(--hr-color-light);
   width: 50px;
 }
 
 section[data-testid="stSidebar"] h2 {
-  color: #86a5d9;
+  color: var(--sidebar-text-color-light);
 }
 
 /* Images */
-
 button[title="View fullscreen"] {
   display: none;
 }
 
 /* hr */
-
 hr {
   width: 200px;
   border-width: 5px;
-  border-color:grey;
+  border-color: var(--hr-color-light);
   margin-top: 0px;
 }
 
 /* First Page */
-
 section[tabindex="0"] .block-container {
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+  h1, h2, h3, h4 {
+    color: var(--text-color-dark);
+  }
+
+  code {
+    color: var(--code-color-dark);
+  }
+
+  body {
+    background-color: var(--background-color-dark);
+  }
+
+  section[data-testid="stSidebar"] > div {
+    background-color: var(--sidebar-background-dark);
+  }
+
+  section[data-testid="stSidebar"] .st-c0 {
+    background-color: var(--sidebar-text-color-dark);
+  }
+
+  section[data-testid="stSidebar"] hr {
+    border-color: var(--hr-color-dark);
+  }
+
+  section[data-testid="stSidebar"] h2 {
+    color: var(--sidebar-text-color-dark);
+  }
+
+  hr {
+    border-color: var(--hr-color-dark);
+  }
 }
