@@ -21,7 +21,7 @@ sidebar_name = "Introduction"
 
 def run():
 
-    st.image("/home/moustapha/Desktop/OpenData/streamlit_app/assets/sheldon.gif")
+    st.image("assets/sheldon.gif")
 
 
     st.title(title)
@@ -95,9 +95,9 @@ def run():
             popup = folium.Popup(popup_content, max_width=600)  
 
             if feature.get('chantgen'):
-                icon_path = "/home/moustapha/Desktop/OpenData/streamlit_app/assets/img_rouge.png"  
+                icon_path = "assets/img_rouge.png"  
             else:
-                icon_path = "/home/moustapha/Desktop/OpenData/streamlit_app/assets/img.png" 
+                icon_path = "assets/img.png" 
 
             icon = folium.CustomIcon(icon_image=icon_path, icon_size=(30, 30))
             folium.Marker(location=[coordinates[1], coordinates[0]], popup=popup, icon=icon).add_to(marker_cluster)
