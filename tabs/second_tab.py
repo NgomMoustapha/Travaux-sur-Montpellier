@@ -104,7 +104,8 @@ def run():
     # Afficher le graphique avec Streamlit
     
     st.plotly_chart(fig)
-        st.markdown(
+    st.markdown(
+            
         """
         ### Durée des chantiers
 
