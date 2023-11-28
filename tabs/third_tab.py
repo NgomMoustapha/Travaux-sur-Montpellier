@@ -18,7 +18,7 @@ def run():
 
     st.markdown(
         """
-        ## Chantiers actuels de la métropôle de Montpellier.
+        ## Chantiers actuels de la métropôle de Montpellier
         """
     )
 
