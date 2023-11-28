@@ -78,7 +78,7 @@ def run():
         for feature in travaux_en_cours_chantgen:
             coordinates = feature['geometry']['coordinates']
             properties = feature['properties']
-            popup_content = f"<b>Adresse :</b> '{properties.get(adresse, 'N/A')}'<br><b>Type de travaux :</b> '{properties.get('type', 'N/A')}'<br><b>Prestataire :</b> '{properties.get('m_ouvrage', 'N/A')}'"
+            popup_content = f"<b>Adresse :</b> '{properties.get('adresse', 'N/A')}'<br><b>Type de travaux :</b> '{properties.get('type', 'N/A')}'<br><b>Prestataire :</b> '{properties.get('m_ouvrage', 'N/A')}'"
             popup = folium.Popup(popup_content, max_width=600)  
 
             if feature.get('chantgen'):
