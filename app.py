@@ -39,7 +39,7 @@ def run():
     st.sidebar.markdown("---")
 
 
-    st.sidebar.markdown("### Membres:")
+    st.sidebar.markdown("### Membres :")
     for member in config.TEAM_MEMBERS:
         st.sidebar.markdown(member.sidebar_markdown(), unsafe_allow_html=True)
 
