@@ -11,7 +11,7 @@ from tabs import intro, second_tab, third_tab
 
 st.set_page_config(
     page_title=config.TITLE,
-    page_icon="/home/moustapha/Desktop/OpenData/streamlit_app/assets/logoPV.jpeg"
+    page_icon="assets/logoPV.jpeg"
 )
 
 with open("style.css", "r") as f:
@@ -32,7 +32,7 @@ TABS = OrderedDict(
 
 def run():
     st.sidebar.image(
-        "/home/moustapha/Desktop/OpenData/streamlit_app/assets/logoPV.jpeg",
+        "assets/logoPV.jpeg",
         width=200,
     )
     tab_name = st.sidebar.radio("", list(TABS.keys()), 0)
